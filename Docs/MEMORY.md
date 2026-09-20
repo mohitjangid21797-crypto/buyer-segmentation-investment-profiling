@@ -88,7 +88,7 @@ python -m streamlit run app.py
 
 ## 7. Open Items
 
-- [ ] User to create GitHub repo `parcl-buyer-segmentation` and push
+- [ ] User to create GitHub repo `buyer-segmentation-investment-profiling` and push
 - [ ] Optional: research paper deliverable
 - [ ] Optional: Streamlit Cloud deploy
 

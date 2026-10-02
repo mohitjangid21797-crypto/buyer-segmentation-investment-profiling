@@ -431,10 +431,10 @@ with tab1:
             color = SEGMENT_COLORS.get(seg, "#64748b")
             st.markdown(
                 f"""
-                <div style="background:#f8fafc;border-left:5px solid {color};border-radius:8px;padding:1rem;">
+                <div style="background:#f8fafc;border-left:5px solid {color};border-radius:8px;padding:1rem;color:#0f172a;">
                     <div style="font-weight:600;color:{color};font-size:0.95rem;">{seg}</div>
-                    <div style="font-size:1.6rem;font-weight:700;margin:0.3rem 0;">{len(sdf):,}</div>
-                    <div style="font-size:0.8rem;color:#64748b;">
+                    <div style="font-size:1.6rem;font-weight:700;margin:0.3rem 0;color:#0f172a;">{len(sdf):,}</div>
+                    <div style="font-size:0.8rem;color:#475569;">
                         Avg Age: {sdf['age'].mean():.0f}<br>
                         Investment: {(sdf['acquisition_purpose']=='Investment').mean()*100:.0f}%<br>
                         Loan Rate: {sdf['loan_applied'].mean()*100:.0f}%
@@ -790,19 +790,16 @@ with tab4:
 with tab5:
     st.subheader("Model Diagnostics & Validation")
 
-    st.markdown(
+    st.info(
         """
-        <div class="insight-box">
-        <b>Methodology Summary</b><br>
-        • Features: client demographics, acquisition purpose, financing, referral channel + 
-        aggregated property behavior (purchases, spend, unit price, floor area)<br>
-        • Encoding: Label Encoding for categoricals<br>
-        • Scaling: StandardScaler<br>
-        • Algorithms: K-Means (primary) + Agglomerative Hierarchical (validation)<br>
-        • Optimal k selected via Elbow Method + Silhouette Score
-        </div>
-        """,
-        unsafe_allow_html=True,
+        **Methodology Summary**
+
+        - **Features:** client demographics, acquisition purpose, financing, referral channel + aggregated property behavior (purchases, spend, unit price, floor area)
+        - **Encoding:** Label Encoding for categoricals
+        - **Scaling:** StandardScaler
+        - **Algorithms:** K-Means (primary) + Agglomerative Hierarchical (validation)
+        - **Optimal k** selected via Elbow Method + Silhouette Score
+        """
     )
 
     c1, c2 = st.columns(2)
